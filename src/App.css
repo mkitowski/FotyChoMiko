@@ -62,51 +62,7 @@
           box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06);
         }
 
-        .sort-toggle-container {
-          margin-bottom: 2rem;
-          display: flex;
-          justify-content: center;
-          width: 100%;
-          max-width: 75rem;
-          padding: 0 1rem;
-          box-sizing: border-box;
-        }
 
-        .sort-button {
-          background-color: #ffffff;
-          border: 1px solid #dadce0;
-          border-radius: 20px;
-          padding: 0.6rem 1.2rem;
-          font-size: 1rem;
-          font-weight: 500;
-          color: #3c4043;
-          cursor: pointer;
-          transition: background-color 0.3s ease, box-shadow 0.3s ease;
-          outline: none;
-          box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
-          display: flex;
-          align-items: center;
-          gap: 0.5rem;
-        }
-
-        .sort-button:hover {
-          background-color: #f1f3f4;
-          box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-        }
-
-        .sort-button .arrow-icon {
-          width: 1.2rem;
-          height: 1.2rem;
-          transition: transform 0.3s ease;
-        }
-
-        .sort-button.active .arrow-icon.down {
-          transform: rotate(0deg);
-        }
-
-        .sort-button.active .arrow-icon.up {
-          transform: rotate(180deg);
-        }
 
         .gallery-sections-container {
           width: 100%;
@@ -124,6 +80,15 @@
           margin-bottom: 1.5rem;
           text-align: left;
           padding-left: 1rem;
+          display: flex;
+          align-items: center;
+        }
+
+        .gallery-count {
+          font-size: 1.2rem;
+          color: #5f6368;
+          margin-left: 0.5rem;
+          font-weight: 500;
         }
 
         .gallery-grid {

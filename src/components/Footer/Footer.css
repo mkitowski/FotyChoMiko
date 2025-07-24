@@ -1,0 +1,14 @@
+        .app-footer {
+          margin-top: auto; /* To jest klucz do "sticky footer" */
+          width: 100%;
+          max-width: 75rem; /* Dopasuj do szerokości kontenera treści */
+          padding: 1.5rem 1rem;
+          text-align: center;
+          color: #5f6368;
+          font-size: 0.9rem;
+          border-top: 1px solid #e0e0e0; /* Delikatna linia oddzielająca */
+          background-color: #f8f9fa; /* Lekko szare tło dla stopki */
+          box-shadow: 0 -2px 5px rgba(0,0,0,0.05); /* Delikatny cień na górze stopki */
+          border-radius: 0.5rem 0.5rem 0 0; /* Zaokrąglone górne rogi */
+         
+        }

@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from 'react';
-import './App.css'; // Importujemy nowy plik CSS
+import './App.css';
 import { GalleryCard } from './components/GalleryCard/GalleryCard.jsx';
+import { Sort } from './components/Sort/Sort.jsx';
+import { Footer } from './components/Footer/Footer.jsx';
 
 const App = () => {
   const [galleries, setGalleries] = useState({});
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [sortOrder, setSortOrder] = useState('newest'); // 'newest' (najnowsze) lub 'oldest' (najstarsze)
+  const [sortOrder, setSortOrder] = useState('newest');
 
   const GOOGLE_SHEET_CSV_URL = 'https://docs.google.com/spreadsheets/d/1gi3nlMPCWRgwcslnSg9DtMCfz50nw7ZlEbcSJab0Lr8/gviz/tq?tqx=out:csv&gid=0';
 
@@ -98,27 +100,7 @@ const App = () => {
           Zdjęcia ChoMików
         </h1>
       </div>
-
-      {/* Kontrolka sortowania */}
-      {!loading && !error && Object.keys(galleries).length > 0 && (
-        <div className="sort-toggle-container">
-          <button
-            className="sort-button"
-            onClick={toggleSortOrder}
-          >
-            Sortuj: {sortOrder === 'newest' ? 'Najnowsze' : 'Najstarsze'}
-            {sortOrder === 'newest' ? (
-              <svg className="arrow-icon down" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path d="M7 13l5 5 5-5H7z"/>
-              </svg>
-            ) : (
-              <svg className="arrow-icon up" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path d="M7 11l5-5 5 5H7z"/>
-              </svg>
-            )}
-          </button>
-        </div>
-      )}
+      <Sort show={!loading && !error && Object.keys(galleries).length > 0} toggleSortOrder={toggleSortOrder} sortOrder={sortOrder} />
 
       {loading ? (
         <div className="loading-message">Ładowanie galerii...</div>
@@ -139,7 +121,7 @@ const App = () => {
           )}
           {sortedYears.map(year => (
             <section key={year} className="gallery-year-section">
-              <h2 className="year-header">{year} (<span className="gallery-count">{galleries[year].length}</span>)</h2>
+              <h2 className="year-header">{year} <span className="gallery-count">({galleries[year].length})</span></h2>
               <div className="gallery-grid">
                 {galleries[year].sort((a, b) => {
                   if (sortOrder === 'oldest') {
@@ -159,6 +141,7 @@ const App = () => {
           ))}
         </div>
       )}
+      <Footer/>
     </div>
   );
 };
