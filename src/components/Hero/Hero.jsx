@@ -11,11 +11,6 @@ export const Hero = () => {
           />
         </div>
         <div className="header-content">
-          <img
-            src="https://gdansk.dominikanie.pl/wp-content/uploads/sites/17/2022/10/CHOR_logo_warianty.jpg"
-            alt="Logo Dominikanów"
-            className="logo-image"
-          />
           <h1 className="main-title">
             Zdjęcia ChoMików
           </h1>
