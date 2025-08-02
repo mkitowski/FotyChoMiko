@@ -3,6 +3,7 @@ import './App.css';
 import { GalleryCard } from './components/GalleryCard/GalleryCard.jsx';
 import { Sort } from './components/Sort/Sort.jsx';
 import { Footer } from './components/Footer/Footer.jsx';
+import { Hero } from './components/Hero/Hero.jsx';
 
 const App = () => {
   const [galleries, setGalleries] = useState({});
@@ -90,16 +91,8 @@ const App = () => {
 
   return (
     <div className="app-container">
-      <div className="header-content">
-        <img
-          src="https://gdansk.dominikanie.pl/wp-content/uploads/sites/17/2022/10/CHOR_logo_warianty.jpg"
-          alt="Logo Dominikanów"
-          className="logo-image"
-        />
-        <h1 className="main-title">
-          Zdjęcia ChoMików
-        </h1>
-      </div>
+      <Hero />
+
       <Sort show={!loading && !error && Object.keys(galleries).length > 0} toggleSortOrder={toggleSortOrder} sortOrder={sortOrder} />
 
       {loading ? (
